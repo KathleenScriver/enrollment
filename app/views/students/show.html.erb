@@ -1,6 +1,7 @@
 <h1>Student: <%= @student.name %></h1>
 
-
-<%= link_to "Edit Student", edit_student_path(@student) %>
-
-<%= link_to "Back to All Students", students_path %>
+<ul>
+  <li><%= link_to "Edit Student", edit_student_path(@student) %></li>
+  <li><%= link_to "Create New Student", new_student_path %></li>
+  <li><%= link_to "Return to All Students", students_path %></li>
+</ul>

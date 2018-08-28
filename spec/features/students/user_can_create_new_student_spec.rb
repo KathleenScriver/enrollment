@@ -5,6 +5,7 @@ describe "As a user" do
     it "should be able to create new student" do
 
       student_name = "Kathleen Scriver"
+      
       visit students_path
       click_link("Create New Student")
 
