@@ -4,7 +4,7 @@ describe "When I visit /students/:id/addresses/new" do
   it "should create a new address" do
     student = Student.create(name: "Kat Scriver")
 
-    visit student_new_address_path(student)
+    visit new_student_address_path(student)
 
     fill_in :address_description, with: "Permanent Address"
     fill_in :address_street_address, with: "123 Main St"
