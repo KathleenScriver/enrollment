@@ -15,6 +15,6 @@ describe "When I visit /students/:id/addresses/new" do
 
     expect(current_path).to eq(student_path(student))
     expect(page).to have_content("Permanent Address")
-    expect(page).to have_content("123 Main St Denver CO 80020")
+    expect(page).to have_content("123 Main St\nDenver, CO 80020")
   end
 end
