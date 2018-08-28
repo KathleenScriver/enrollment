@@ -17,5 +17,19 @@ describe "As a user" do
       expect(page).to_not have_content(prior_name)
       expect(page).to have_content(new_name)
     end
+
+    it 'should have links to create new and see all students' do
+      student = Student.create!(name: "Kat Scriver")
+
+      visit edit_student_path(student)
+
+      click_on("Return to All Students")
+      expect(current_path).to eq(students_path)
+
+      visit edit_student_path
+
+      click_on("Create New Student")
+      expect(current_path).to eq(new_student_path)
+    end
   end
 end
