@@ -1,10 +1,18 @@
 <h1>Student: <%= @student.name %></h1>
 
+<h3>Addresses</h3>
 <div class='address'>
   <% @student.addresses.each do |address| %>
   <p><%= address.description %></p>
   <p><%= address.street_address %></p>
   <p><%= address.city %>, <%= address.state %> <%= address.zip_code %></p>
+  <% end %>
+</div>
+
+<h3>Courses</h3>
+<div class='courses'>
+  <% @student.courses.each do |course| %>
+  <p><%= course.name %></p>
   <% end %>
 </div>
 
