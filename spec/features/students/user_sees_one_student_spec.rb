@@ -15,10 +15,10 @@ describe "As a user" do
 
       visit student_path(student)
 
-      click_on("Return to All Students")
+      click_link("Return to All Students")
       expect(current_path).to eq(students_path)
 
-      visit student_path
+      visit student_path(student)
 
       click_on("Create New Student")
       expect(current_path).to eq(new_student_path)
