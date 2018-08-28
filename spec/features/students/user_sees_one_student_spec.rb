@@ -23,5 +23,18 @@ describe "As a user" do
       click_on("Create New Student")
       expect(current_path).to eq(new_student_path)
     end
+
+    it 'should show all addresses' do
+      student = Student.create!(name: "Kat Scriver")
+      address_1 = student.addresses.create(description: "Home", street_address: "123 Main", city: "Denver", state: "CO", zip_code: "80020")
+      address_2 = student.addresses.create(description: "Other", street_address: "774 Turtle St", city: "Denver", state: "CO", zip_code: "80025")
+
+      visit student_path(student)
+
+      expect(page).to have_content(address_1.description)
+      expect(page).to have_content(address_2.description)
+      expect(page).to have_content(address_1.street_address)
+      expect(page).to have_content(address_2.street_address)
+    end
   end
 end
