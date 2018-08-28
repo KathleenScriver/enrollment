@@ -8,6 +8,9 @@ describe "As a user" do
       visit student_path(student)
 
       expect(page).to have_content(student.name)
+
+      click_link("Back to All Students")
+      expect(current_path).to eq(students_path)
     end
   end
 end
