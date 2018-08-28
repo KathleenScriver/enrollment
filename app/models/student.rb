@@ -1,3 +1,3 @@
 class Student < ApplicationRecord
-
-end 
+  validates_presence_of :name
+end
