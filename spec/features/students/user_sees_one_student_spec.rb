@@ -36,5 +36,16 @@ describe "As a user" do
       expect(page).to have_content(address_1.street_address)
       expect(page).to have_content(address_2.street_address)
     end
+
+    it 'should list all courses for student' do
+      student = Student.create!(name: "Kat Scriver")
+      course_1 = student.courses.create(name: "Mod 1")
+      course_2 = student.courses.create(name: "Mod 2")
+
+      visit student_path(student)
+
+      expect(page).to have_content(course_1.name)
+      expect(page).to have_content(course_2.name)
+    end
   end
 end
