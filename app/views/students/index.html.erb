@@ -1,5 +1,7 @@
 <h1>All Students</h1>
 
+<%= link_to "Create New Student", new_student_path %>
+
 <div>
 <% @students.each do |student| %>
   <ul id="student-<%= student.id %>">
