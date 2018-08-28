@@ -13,5 +13,9 @@ describe "When I visit /courses/:id" do
     expect(page).to have_content(student_1.name)
     expect(page).to have_content(student_2.name)
     expect(page).to have_content(student_3.name)
+
+    within('#course-count') do
+      expect(page).to have_content(course.students.count)
+    end
   end
 end

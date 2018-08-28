@@ -1,5 +1,7 @@
 <h1><%= @course.name %></h1>
 
+<h4 id="course-count">Number of Students in Course: <%= @student_count %></h4>
+
 <div class='students'>
   <ul>
     <% @course.students.each do |student| %>
